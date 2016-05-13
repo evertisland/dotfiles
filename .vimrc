@@ -1,10 +1,35 @@
 "Dear Vim, please use the following configuration
 
-"--- ALIASES ---
+"""ALIASES"""
+"""""""""""""
+
+
+
+" Use F2 to save in insert mode
 inoremap <F2> <c-o>:w<cr>
+
+
+"""GENERAL"""
+""""""""""""
+"disable swap files creation
+set nowsapfile
 
 "enable line numbers
 set number
+
+"enable deletion with backspace
+set backspace=indent,eol,start
+
+"""WINDOWS"""
+"""""""""""""
+"Use Control-h/j/k/l to toggle windows
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-k>k
+map <C-l> <C-l>l
+
+"""COLOURS"""
+"""""""""""""
 
 "set color scheme
 "colorscheme 256_noir
@@ -18,7 +43,10 @@ if !has("gui_running")
     colorscheme 256_noir
 endif
 
-"---INDENTATION--------------
+"set distinctive cursor colour
+autocmd ColorScheme * highlight Cursor ctermfg=196 ctermbg=196
+
+"---INDENTATION-------------
 
 "tab is set to 2 spaces
 set tabstop=2
